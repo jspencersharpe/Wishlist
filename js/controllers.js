@@ -1,4 +1,3 @@
-
 ;(function(){
   'use strict';
 
@@ -6,7 +5,7 @@
     .controller('ShowController', function($routeParams, wishlistFactory){
       var vm = this;
       var id = $routeParams.id;
-      wishlistFactory.getWishlist(id, function(data){
+      wishlistFactory.getWish(id, function(data){
         vm.wish = data;
       });
     })
