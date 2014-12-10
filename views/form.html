@@ -1,0 +1,23 @@
+<form name="myForm" ng-submit="myForm$valid && wishlist.addNewWish()" novalidate>
+  <div class="form-group" ng-class="{'has-error': !wishlist.newWish.name}">
+    <label class="control-label">Name</label>
+      <input class="form-control" type="text" ng-model="wishlist.newWish.name" required>
+  </div>
+  <div class="form-group" ng-class="{'has-error': !wishlist.newWish.cost}">
+    <label class="control-label">Cost</label>
+      <input class="form-control" type="text" ng-model="wishlist.newWish.cost" required>
+  </div>
+  <div class="form-group" ng-class="{'has-error': !wishlist.newWish.priority}">
+    <label class="control-label">Priority</label>
+    <select ng-model="wishlist.newWish`.priority">
+      <option value="{{val}}" ng-repeat="(val, text) in wishlist.priorityOptions">
+        {{text}}
+      </option>
+    </select>
+  </div>
+  <div class="form-group" ng-class="{'has-error': !wishlist.newWish.link}">
+    <label class="control-label">Link</label>
+      <input class="form-control" type="text" ng-model="wishlist.newWish.link" required>
+  </div>
+<input type="submit" value="Add Wish" ng-disabled="myForm.$invalid">
+</form>
