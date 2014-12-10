@@ -1,11 +1,11 @@
 ;(function(){
 	'use strict';
 
-	angular.module('wishList')
+	angular.module('wishApp')
 		.factory('wishlistFactory', function($http, $location){
 
 			function getWish(id, cb){
-				var url = 'https://ssclwishlist.firebaseio.com/' + id + '.json';
+				var url = 'https://ssclwishlist.firebaseio.com/wishlist' + id + '.json';
 
 				$http.get(url)
 					.success(function(data){
@@ -17,7 +17,7 @@
 				}
 
 			function editWish(id, wish){
-				var url = 'https://ssclwishlist.firebaseio.com/' + id + '.json';
+				var url = 'https://ssclwishlist.firebaseio.com/wishlist' + id + '.json';
 				$http.put(url, wish)
 					.success(function(data){
 						$location.path('/');
@@ -25,11 +25,21 @@
 					.error(function(err){
 						console.log(err);
 					});
-				}
+			 }
 
 			function getAllWishes(cb){
-				$http.get('https://ssclwishlist.firebaseio.com/.json'
+				$http.get('https://ssclwishlist.firebaseio.com/wishlist.json'
 					.success(function(data){
+						cb(data);
+					})
+					.error(function(err){
+						console.log(err);
+					});
+			  }
+
+			function createWish(wish, cb){
+				$http.post('https://ssclwishlist.firebaseio.com/wishlist.json'
+					.success(function(){
 						cb(data);
 					})
 					.error(function(err){
@@ -37,18 +47,8 @@
 					});
 			}
 
-			function createWish(wish, cb){
-				$http.post('https://ssclwishlist.firebaseio.com/.json'
-					.success(function(){
-						cb();
-					})
-					.error(function(err){
-						console.log(err);
-					});
-			}
-
 			function deleteWish(wishId, cb){
-				var url = 'https://ssclwishlist.firebaseio.com/.json'
+				var url = 'https://ssclwishlist.firebaseio.com/wishlist.json'
 					$http.delete(url)
 					.success(function(){
 						cb();
@@ -73,7 +73,9 @@
 				deleteWish: deleteWish,
 				priorityOptions: priorityOptions
 			};
+      
 		})
+
 }());
 
 
