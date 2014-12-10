@@ -6,12 +6,12 @@
       $routeProvider
       .when('/', {
         templateUrl: 'views/table.html',
-        controller: 'WishlistController',
+        controller: 'WishController',
         controllerAs: 'wishlist'
       })
       .when('/new', {
         templateUrl: 'views/form.html',
-        controller: 'WishlistController',
+        controller: 'WishController',
         controllerAs: 'wishlist'
       })
       .when('/:id', {

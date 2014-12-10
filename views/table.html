@@ -15,9 +15,9 @@
       <td>{{wish.priority}}</td>
       <td>{{wish.link}}</td>
       <td>
-        <a class="btn btn-primary" href="/#/{{wishId}}"></a>
-        <a class="btn btn-primary" href="/#/{{wishId}}/edit"></a>
-       <button ng-click="wish.removeWish(wishId)"></button>
+        <a class="btn btn-primary" href="/#/{{wishId}}">Show</a>
+        <a class="btn btn-primary" href="/#/{{wishId}}/edit">Edit</a>
+       <button ng-click="wishlist.removeWish(wishId)">Delete</button>
       </td>
     </tr>
   </tbody>

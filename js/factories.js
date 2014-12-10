@@ -5,7 +5,7 @@
 		.factory('wishlistFactory', function($http, $location){
 
 			function getWish(id, cb){
-				var url = 'https://ssclwishlist.firebaseio.com/wishlist' + id + '.json';
+				var url = 'https://ssclwishlist.firebaseio.com/wishlist/' + id + '.json';
 
 				$http.get(url)
 					.success(function(data){
@@ -17,7 +17,7 @@
 				}
 
 			function editWish(id, wish){
-				var url = 'https://ssclwishlist.firebaseio.com/wishlist' + id + '.json';
+				var url = 'https://ssclwishlist.firebaseio.com/wishlist/' + id + '.json';
 				$http.put(url, wish)
 					.success(function(data){
 						$location.path('/');
