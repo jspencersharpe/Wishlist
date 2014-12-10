@@ -1,4 +1,4 @@
-<form name="myForm" ng-submit="myForm$valid && wishlist.addNewWish()" novalidate>
+<form name="myForm" ng-submit="myForm.$valid && wishlist.addNewWish()" novalidate>
   <div class="form-group" ng-class="{'has-error': !wishlist.newWish.name}">
     <label class="control-label">Name</label>
       <input class="form-control" type="text" ng-model="wishlist.newWish.name" required>
@@ -17,8 +17,8 @@
   </div>
   <div class="form-group" ng-class="{'has-error': !wishlist.newWish.link}">
     <label class="control-label">Link</label>
-      <input class="form-control" type="url" ng-model="wishlist.newWish.link" required>
+      <input class="form-control" type="url" ng-model="wishlist.newWish.link">
   </div>
-<input type="submit" value="Add Wish" ng-disabled="myForm.$invalid">
+	<input type="submit" value="Add Wish" class="btn" ng-class="{disabled: myForm.$invalid}">
 </form>
 

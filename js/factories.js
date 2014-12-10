@@ -17,9 +17,11 @@
 				}
 
 			function editWish(id, wishlist){
+				console.log(id, wishlist);
 				var url = 'https://ssclwishlist.firebaseio.com/' + id + '.json';
-				$http.put(url, wish)
+				$http.put(url, wishlist)
 					.success(function(data){
+						console.log('edit success');
 						$location.path('/');
 					})
 					.error(function(err){
