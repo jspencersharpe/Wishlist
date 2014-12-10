@@ -9,7 +9,7 @@
   </div>
   <div class="form-group" ng-class="{'has-error': !wishlist.newWish.priority}">
     <label class="control-label">Priority</label>
-    <select ng-model="wishlist.newWish`.priority">
+    <select ng-model="wishlist.newWish.priority">
       <option value="{{val}}" ng-repeat="(val, text) in wishlist.priorityOptions">
         {{text}}
       </option>
@@ -21,3 +21,4 @@
   </div>
 <input type="submit" value="Add Wish" ng-disabled="myForm.$invalid">
 </form>
+

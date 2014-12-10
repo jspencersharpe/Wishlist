@@ -16,7 +16,7 @@
 					});
 				}
 
-			function editWish(id, wish){
+			function editWish(id, wishlist){
 				var url = 'https://ssclwishlist.firebaseio.com/wishlist/' + id + '.json';
 				$http.put(url, wish)
 					.success(function(data){
