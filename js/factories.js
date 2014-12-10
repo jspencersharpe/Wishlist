@@ -28,7 +28,7 @@
 			 }
 
 			function getAllWishes(cb){
-				$http.get('https://ssclwishlist.firebaseio.com/wishlist.json'
+				$http.get('https://ssclwishlist.firebaseio.com/wishlist.json')
 					.success(function(data){
 						cb(data);
 					})
@@ -38,7 +38,7 @@
 			  }
 
 			function createWish(wish, cb){
-				$http.post('https://ssclwishlist.firebaseio.com/wishlist.json'
+				$http.post('https://ssclwishlist.firebaseio.com/wishlist.json', wish)
 					.success(function(){
 						cb(data);
 					})
@@ -48,7 +48,7 @@
 			}
 
 			function deleteWish(wishId, cb){
-				var url = 'https://ssclwishlist.firebaseio.com/wishlist.json'
+				var url = 'https://ssclwishlist.firebaseio.com/wishlist/' + wishId + '.json';
 					$http.delete(url)
 					.success(function(){
 						cb();
@@ -73,9 +73,7 @@
 				deleteWish: deleteWish,
 				priorityOptions: priorityOptions
 			};
-      
 		})
-
 }());
 
 
