@@ -21,10 +21,16 @@
 				var url = 'https://ssclwishlist.firebaseio.com/wishlist/' + id + '.json';
 =======
 			function editWish(id, wishlist){
+				console.log(id, wishlist);
 				var url = 'https://ssclwishlist.firebaseio.com/' + id + '.json';
+<<<<<<< HEAD
 >>>>>>> 6826ee4b97922bfbc63e1a1a351f8c01a321c796
 				$http.put(url, wish)
+=======
+				$http.put(url, wishlist)
+>>>>>>> cdd6d212103e867e8c746417ecbb936555d4d28b
 					.success(function(data){
+						console.log('edit success');
 						$location.path('/');
 					})
 					.error(function(err){
