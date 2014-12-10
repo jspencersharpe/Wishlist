@@ -5,7 +5,7 @@
 		.factory('wishlistFactory', function($http, $location){
 
 			function getWish(id, cb){
-				var url = 'https://ssclwishlist.firebaseio.com/wishlist/' + id + '.json';
+				var url = 'https://ssclwishlist.firebaseio.com/' + id + '.json';
 
 				$http.get(url)
 					.success(function(data){
@@ -17,7 +17,7 @@
 				}
 
 			function editWish(id, wishlist){
-				var url = 'https://ssclwishlist.firebaseio.com/wishlist/' + id + '.json';
+				var url = 'https://ssclwishlist.firebaseio.com/' + id + '.json';
 				$http.put(url, wish)
 					.success(function(data){
 						$location.path('/');
@@ -28,7 +28,7 @@
 			 }
 
 			function getAllWishes(cb){
-				$http.get('https://ssclwishlist.firebaseio.com/wishlist.json')
+				$http.get('https://ssclwishlist.firebaseio.com/.json')
 					.success(function(data){
 						cb(data);
 					})
@@ -38,7 +38,7 @@
 			  }
 
 			function createWish(wish, cb){
-				$http.post('https://ssclwishlist.firebaseio.com/wishlist.json', wish)
+				$http.post('https://ssclwishlist.firebaseio.com/.json', wish)
 					.success(function(){
 						cb(data);
 					})
@@ -48,7 +48,7 @@
 			}
 
 			function deleteWish(wishId, cb){
-				var url = 'https://ssclwishlist.firebaseio.com/wishlist/' + wishId + '.json';
+				var url = 'https://ssclwishlist.firebaseio.com/' + wishId + '.json';
 					$http.delete(url)
 					.success(function(){
 						cb();
