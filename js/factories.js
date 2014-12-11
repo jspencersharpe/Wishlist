@@ -39,7 +39,7 @@
 
 			function createWish(wish, cb){
 				$http.post('https://ssclwishlist.firebaseio.com/.json', wish)
-					.success(function(){
+					.success(function(data){
 						cb(data);
 					})
 					.error(function(err){
