@@ -1,0 +1,35 @@
+body {
+	background-image: url('/images/notebook.png');
+}
+
+h1{
+	font-family: 'Righteous', cursive;
+	font-size: 45px;
+	-webkit-text-stroke: 1.5px slategrey;
+ 	-webkit-text-fill-color: orange;		 	
+	padding: 25px;
+}
+
+tr {
+	padding: 25px;
+}
+
+.btn-primary{
+	margin-left: 25px;
+}
+
+td{
+	margin: 20px;
+}
+	
+
+table{
+	background-color: lightgrey;
+	width: 90%;
+  margin: 0 auto;
+  margin-top: 10px;
+  min-height: 200px;
+  text-align: center;
+}
+	
+
